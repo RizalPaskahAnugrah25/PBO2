@@ -1,0 +1,42 @@
+package service;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        TraderService traderService = new TraderService();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n--- Traders Family Management ---");
+            System.out.println("1. Add Trader");
+            System.out.println("2. View Traders");
+            System.out.println("3. Update Trader Email");
+            System.out.println("4. Delete Trader");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    traderService.addTrader();
+                    break;
+                case 2:
+                    traderService.viewTraders();
+                    break;
+                case 3:
+                    traderService.updateTraderEmail();
+                    break;
+                case 4:
+                    traderService.deleteTrader();
+                    break;
+                case 5:
+                    System.out.println("Exiting the system...");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+}
